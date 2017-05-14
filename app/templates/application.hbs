@@ -1,5 +1,29 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Simple Circles</h1>
+{{simple-circles data=circles}}
 
-{{outlet}}
+<h1>Diverging Stacked Bar</h1>
+<h2>good for Likard scale questions
+  <span class="based-on">
+    (based on: 
+    <a href="http://bl.ocks.org/wpoely86/e285b8e4c7b84710e463">http://bl.ocks.org/wpoely86/e285b8e4c7b84710e463</a> 
+    )
+  </span>
+</h2>
+
+{{diverging-stacked-bar data=divergingStackedBar}}
+
+<h1>Circle Dragging</h1>
+<h2>Interactive usage on canvas instead of SVG
+  <span class="based-on">
+    (based on: 
+    <a href="https://bl.ocks.org/mbostock/444757cc9f0fde320a5f469cd36860f4">https://bl.ocks.org/mbostock/444757cc9f0fde320a5f469cd36860f4</a> 
+    )
+  </span>
+</h2>
+
+{{circle-dragging 
+  data=circleDraggingData
+  radius=circleDraggingRadius
+  width=circleDraggingWidth
+  heigh=circleDraggingHeight
+}}

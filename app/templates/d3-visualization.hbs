@@ -1,0 +1,19 @@
+<!--- d3 data visualization -->
+DATA VIZ
+{{#if isCanvas}}
+<canvas 
+  id={{id}}
+  class="{{class}} {{name}} svg"
+  height={{_height}}
+  width={{_width}}
+>
+</canvas>
+{{else}}
+<svg
+  id={{id}}
+  class="{{class}} {{name}} canvas"
+  height={{_height}}
+  width={{_width}}
+>
+</svg>
+{{/if}}
