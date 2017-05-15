@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import { range } from 'd3-array';
+import weather from '../data/weather';
 const { run, get, set } = Ember;
 const TRANSITION_INTERVAL = 3000;
 
@@ -23,6 +24,8 @@ export default Ember.Controller.extend({
     run.schedule('render', this, this.cycleCircles);
     run.schedule('render', this, this.cycleDivergingStackedBar);
     run.schedule('render', this, this.circleDragging);
+    run.schedule('render', this, this.weatherData);
+    run.schedule('render', this, this.stackedNegative);
   },
 
   cycleCircles() {
@@ -102,5 +105,45 @@ export default Ember.Controller.extend({
   circleDraggingWidth: 1024,
   circleDraggingHeight: 350,
   circleDraggingRadius: 32,
+
+  weatherData() {
+    set(this, 'weatherData', weather);
+  },
+
+  stackedNegative() {
+    const data = [
+      {
+        month: "Q1-2016", 
+        apples: randomNumber(100,5000)(), 
+        bananas: randomNumber(100,5000)(), 
+        cherries: -1 * randomNumber(100,5000)(), 
+        dates: randomNumber(-2000,1000)()
+      },
+      {
+        month: "Q2-2016", 
+        apples: randomNumber(100,5000)(), 
+        bananas: randomNumber(100,5000)(), 
+        cherries: -1 * randomNumber(100,5000)(), 
+        dates: randomNumber(-2000,1000)()
+      },
+      {
+        month: "Q3-2016", 
+        apples: randomNumber(100,5000)(), 
+        bananas: randomNumber(100,5000)(), 
+        cherries: -1 * randomNumber(100,5000)(), 
+        dates: randomNumber(-2000,1000)()
+      },
+      {
+        month: "Q4-2016", 
+        apples: randomNumber(100,5000)(), 
+        bananas: randomNumber(100,5000)(), 
+        cherries: -1 * randomNumber(100,5000)(), 
+        dates: randomNumber(-2000,1000)()
+      },
+    ];
+
+    set(this, 'stackedNegativeValues', data);
+    // run.later(this, this.stackedNegative, TRANSITION_INTERVAL);
+  }
 
 });

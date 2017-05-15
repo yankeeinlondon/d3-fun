@@ -13,7 +13,7 @@ import { easeCubicInOut } from 'd3-ease';
 const { get } = Ember;
 
 export default Ember.Component.extend(d3Mixin, {
-  name: 'diverging-stacked-bar',
+  name: 'diverging-stacked-bar', 
 
   top: 50,
   right: 20,
@@ -21,6 +21,8 @@ export default Ember.Component.extend(d3Mixin, {
   left: 75,
 
   spacing: 20,
+
+  // attributeBindings: ['_width:width', '_height:height'],
 
   draw() {
     const { data, margin, spacing } = this.getProperties('data', 'margin', 'spacing');

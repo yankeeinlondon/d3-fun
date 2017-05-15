@@ -24,3 +24,28 @@ h2 .based-on a {
 h2 .based-on a:hover {
   color: black;
 }
+
+.difference-chart .axis path,
+.difference-chart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.difference-chart .x.axis path {
+  display: none;
+}
+
+.difference-chart .area.above {
+  fill: rgb(252,141,89);
+}
+
+.difference-chart .area.below {
+  fill: rgb(145,207,96);
+}
+
+.difference-chart .line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}

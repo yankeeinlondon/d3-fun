@@ -71,7 +71,8 @@ export default Component.extend({
       let yScale = scaleLinear()
         .domain(
           // `extent()` requires that data is sorted ascending
-          extent(data.map((d) => d.value).sort(ascending)))
+          extent(data.map((d) => d.value).sort(ascending))
+        )
         .range([25, height]);
 
       // UPDATE EXISTING
